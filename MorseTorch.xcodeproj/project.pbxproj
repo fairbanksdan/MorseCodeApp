@@ -21,6 +21,8 @@
 		D66FC07A18FDB3D50059D1E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66FC05C18FDB3D50059D1E2 /* UIKit.framework */; };
 		D66FC08218FDB3D50059D1E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D66FC08018FDB3D50059D1E2 /* InfoPlist.strings */; };
 		D66FC08418FDB3D50059D1E2 /* MorseTorchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FC08318FDB3D50059D1E2 /* MorseTorchTests.m */; };
+		D66FC08E18FDB6EA0059D1E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66FC08D18FDB6EA0059D1E2 /* AVFoundation.framework */; };
+		D66FC09118FDC4E90059D1E2 /* NSString+MorseCode.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FC09018FDC4E90059D1E2 /* NSString+MorseCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		D66FC07F18FDB3D50059D1E2 /* MorseTorchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MorseTorchTests-Info.plist"; sourceTree = "<group>"; };
 		D66FC08118FDB3D50059D1E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D66FC08318FDB3D50059D1E2 /* MorseTorchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MorseTorchTests.m; sourceTree = "<group>"; };
+		D66FC08D18FDB6EA0059D1E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D66FC08F18FDC4E90059D1E2 /* NSString+MorseCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MorseCode.h"; sourceTree = "<group>"; };
+		D66FC09018FDC4E90059D1E2 /* NSString+MorseCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MorseCode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D66FC08E18FDB6EA0059D1E2 /* AVFoundation.framework in Frameworks */,
 				D66FC05B18FDB3D50059D1E2 /* CoreGraphics.framework in Frameworks */,
 				D66FC05D18FDB3D50059D1E2 /* UIKit.framework in Frameworks */,
 				D66FC05918FDB3D50059D1E2 /* Foundation.framework in Frameworks */,
@@ -101,6 +107,7 @@
 		D66FC05718FDB3D50059D1E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D66FC08D18FDB6EA0059D1E2 /* AVFoundation.framework */,
 				D66FC05818FDB3D50059D1E2 /* Foundation.framework */,
 				D66FC05A18FDB3D50059D1E2 /* CoreGraphics.framework */,
 				D66FC05C18FDB3D50059D1E2 /* UIKit.framework */,
@@ -115,6 +122,8 @@
 				D66FC06718FDB3D50059D1E2 /* AppDelegate.h */,
 				D66FC06818FDB3D50059D1E2 /* AppDelegate.m */,
 				D66FC06A18FDB3D50059D1E2 /* Main.storyboard */,
+				D66FC08F18FDC4E90059D1E2 /* NSString+MorseCode.h */,
+				D66FC09018FDC4E90059D1E2 /* NSString+MorseCode.m */,
 				D66FC06D18FDB3D50059D1E2 /* ViewController.h */,
 				D66FC06E18FDB3D50059D1E2 /* ViewController.m */,
 				D66FC07018FDB3D50059D1E2 /* Images.xcassets */,
@@ -252,6 +261,7 @@
 				D66FC06F18FDB3D50059D1E2 /* ViewController.m in Sources */,
 				D66FC06918FDB3D50059D1E2 /* AppDelegate.m in Sources */,
 				D66FC06518FDB3D50059D1E2 /* main.m in Sources */,
+				D66FC09118FDC4E90059D1E2 /* NSString+MorseCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

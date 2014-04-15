@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *messageTextField;
+
+@property (weak, nonatomic) IBOutlet UITextView *displayCurrentLetter;
+
 @end
