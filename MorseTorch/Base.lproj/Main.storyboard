@@ -16,18 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcn-7F-Byi">
-                                <rect key="frame" x="20" y="20" width="280" height="127"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="127" id="AlN-av-qBa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjN-dl-x0p">
-                                <rect key="frame" x="59" y="155" width="36" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjN-dl-x0p">
+                                <rect key="frame" x="62" y="116" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,8 +26,8 @@
                                     <action selector="sendMessageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lwn-gr-N5o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0m-A8-1A2">
-                                <rect key="frame" x="213" y="155" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0m-A8-1A2">
+                                <rect key="frame" x="209" y="116" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,23 +36,30 @@
                                     <action selector="cancelMessageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mEc-en-qvn"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Enter message here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HXd-h0-9LO">
+                                <rect key="frame" x="20" y="33" width="280" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Bcn-7F-Byi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="A6V-hH-YWq"/>
-                            <constraint firstItem="Bcn-7F-Byi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="MhX-ce-ylt"/>
-                            <constraint firstItem="IjN-dl-x0p" firstAttribute="top" secondItem="Bcn-7F-Byi" secondAttribute="bottom" constant="8" symbolic="YES" id="OZ2-MG-gsr"/>
-                            <constraint firstAttribute="trailing" secondItem="Bcn-7F-Byi" secondAttribute="trailing" constant="20" symbolic="YES" id="WuO-Oh-9Sb"/>
-                            <constraint firstItem="z0m-A8-1A2" firstAttribute="leading" secondItem="IjN-dl-x0p" secondAttribute="trailing" constant="118" id="ZI0-yA-KTT"/>
-                            <constraint firstItem="z0m-A8-1A2" firstAttribute="baseline" secondItem="IjN-dl-x0p" secondAttribute="baseline" id="dQf-yP-PSX"/>
-                            <constraint firstAttribute="trailing" secondItem="z0m-A8-1A2" secondAttribute="trailing" constant="59" id="jL0-db-Cp0"/>
+                            <constraint firstAttribute="trailing" secondItem="z0m-A8-1A2" secondAttribute="trailing" constant="63" id="2Zg-U0-YlC"/>
+                            <constraint firstItem="HXd-h0-9LO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="13" id="C9C-Rf-NBb"/>
+                            <constraint firstItem="IjN-dl-x0p" firstAttribute="top" secondItem="HXd-h0-9LO" secondAttribute="bottom" constant="8" symbolic="YES" id="K9H-8G-xEI"/>
+                            <constraint firstItem="HXd-h0-9LO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="MLA-6O-GFb"/>
+                            <constraint firstItem="z0m-A8-1A2" firstAttribute="top" secondItem="HXd-h0-9LO" secondAttribute="bottom" constant="8" symbolic="YES" id="OjY-uj-ui3"/>
+                            <constraint firstAttribute="trailing" secondItem="HXd-h0-9LO" secondAttribute="trailing" constant="20" symbolic="YES" id="se5-1W-Pyz"/>
+                            <constraint firstItem="IjN-dl-x0p" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="62" id="xN1-aM-HC2"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="SendMessageButton" destination="IjN-dl-x0p" id="alm-rK-4jH"/>
                         <outlet property="cancelMessageButton" destination="z0m-A8-1A2" id="e3G-vG-NcR"/>
-                        <outlet property="messageTextField" destination="Bcn-7F-Byi" id="im9-0u-oY0"/>
+                        <outlet property="messageTextField" destination="HXd-h0-9LO" id="07Z-cI-qhz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -12,7 +12,7 @@
 #import "TorchController.h"
 #import <ProgressHUD/ProgressHUD.h>
 
-@interface ViewController () <UITextViewDelegate, TorchControllerDelegate>
+@interface ViewController () <UITextFieldDelegate, TorchControllerDelegate>
 
 @property (nonatomic, strong) NSArray *translatedSymbolsArray;
 @property (strong, nonatomic) IBOutlet UIButton *SendMessageButton;
@@ -33,7 +33,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(enableOrDisableButton)
-                                                 name:UITextViewTextDidChangeNotification
+                                                 name:UITextFieldTextDidChangeNotification
                                                object:nil];
 }
 
@@ -71,9 +71,9 @@
     self.translatedSymbolsArray = [NSString morseSymbolsForString:self.messageTextField.text];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField*)aTextField
+- (BOOL)textFieldShouldReturn:(UITextView*)textField
 {
-    [aTextField resignFirstResponder];
+    [textField resignFirstResponder];
     return YES;
 }
 
