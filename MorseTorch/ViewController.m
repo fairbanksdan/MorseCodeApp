@@ -9,16 +9,15 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "NSString+MorseCode.h"
+#import "TorchController.h"
+#import <ProgressHUD/ProgressHUD.h>
 
-@interface ViewController () <UITextViewDelegate>
+@interface ViewController () <UITextViewDelegate, TorchControllerDelegate>
 
 @property (nonatomic, strong) NSArray *translatedSymbolsArray;
-
-@property (nonatomic, strong) AVCaptureDevice *myDevice;
-
-@property (nonatomic, strong) NSOperationQueue *flashQueue;
-
 @property (strong, nonatomic) IBOutlet UIButton *SendMessageButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancelMessageButton;
+@property (strong, nonatomic) TorchController *torchController;
 
 @end
 
@@ -27,11 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.myDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    self.flashQueue = [NSOperationQueue new];
-    
-    self.flashQueue.maxConcurrentOperationCount = 1;
-    
+	
+    self.torchController = [TorchController new];
+    self.torchController.delegate = self;
     self.messageTextField.delegate = self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -44,68 +41,23 @@
 {
     if (_messageTextField.text.length > 0) {
         _SendMessageButton.enabled = YES;
+        _cancelMessageButton.enabled = YES;
     } else {
         _SendMessageButton.enabled = NO;
+        _cancelMessageButton.enabled = NO;
     }
 }
 
-
-- (IBAction)turnOn:(id)sender {
-    self.myDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
-    if ([self.myDevice hasTorch] && [self.myDevice hasFlash])
-        {
-            [self.myDevice lockForConfiguration:nil];
-            [self.myDevice setTorchMode:AVCaptureTorchModeOn];
-            [self.myDevice setFlashMode:AVCaptureFlashModeOn];
-            [self.myDevice unlockForConfiguration];
-        }
-}
-
-
-- (IBAction)turnOff:(id)sender {
-    self.myDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
-    if ([self.myDevice hasTorch] && [self.myDevice hasFlash])
-    {
-        [self.myDevice lockForConfiguration:nil];
-        [self.myDevice setTorchMode:AVCaptureTorchModeOff];
-        [self.myDevice setFlashMode:AVCaptureFlashModeOff];
-        [self.myDevice unlockForConfiguration];
-    }
+- (IBAction)cancelMessageButton:(id)sender {
+    [self.torchController cancelSending];
+    [ProgressHUD dismiss];
+    [self.SendMessageButton setEnabled:YES];
 }
 
 - (IBAction)sendMessageButton:(id)sender {
     [self.SendMessageButton setEnabled:NO];
-    [self convertMorseCode];
+    [_torchController convertMorseCode:self.messageTextField.text];
 
-    for (NSString *morseLetter in self.translatedSymbolsArray) {
-        for (int i=0; i<morseLetter.length; i++) {
-            NSString *letter = [morseLetter substringWithRange:NSMakeRange(i, 1)];
-            if ([letter isEqualToString:@"."]) {
-                [self.flashQueue addOperationWithBlock:^{
-                    [self flashDot];
-                }];
-            } else if ([letter isEqualToString:@"-"]) {
-                [self.flashQueue addOperationWithBlock:^{
-                    [self flashDash];
-                }];
-            } else if ([letter isEqualToString:@" "]) {
-                [self.flashQueue addOperationWithBlock:^{
-                    [self flashWordSpace];
-                }];
-                
-            }
-        }
-        [self.flashQueue addOperationWithBlock:^{
-            [self flashLetterSpace];
-        }];
-    }
-    [self.flashQueue addOperationWithBlock:^{
-        [[NSOperationQueue mainQueue]addOperationWithBlock:^{
-            [self.SendMessageButton setEnabled:YES];
-        }];
-    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,51 +71,20 @@
     self.translatedSymbolsArray = [NSString morseSymbolsForString:self.messageTextField.text];
 }
 
--(void)torchController
-{
-    usleep(100000);
-}
-
--(void)flashDot
-{
-    [self.myDevice lockForConfiguration:nil];
-    [self.myDevice setTorchMode:AVCaptureTorchModeOn];
-    [self.myDevice unlockForConfiguration];
-    usleep(100000);
-    
-    [self.myDevice lockForConfiguration:nil];
-    [self.myDevice setTorchMode:AVCaptureTorchModeOff];
-    [self.myDevice unlockForConfiguration];
-    usleep(100000);
-}
-
--(void)flashDash
-{
-    [self.myDevice lockForConfiguration:nil];
-    [self.myDevice setTorchMode:AVCaptureTorchModeOn];
-    [self.myDevice unlockForConfiguration];
-    usleep(300000);
-    
-    [self.myDevice lockForConfiguration:nil];
-    [self.myDevice setTorchMode:AVCaptureTorchModeOff];
-    [self.myDevice unlockForConfiguration];
-    usleep(100000);
-}
-
--(void)flashWordSpace
-{
-    usleep(400000);
-}
-
--(void)flashLetterSpace
-{
-    usleep(200000);
-}
-
 - (BOOL)textFieldShouldReturn:(UITextField*)aTextField
 {
     [aTextField resignFirstResponder];
     return YES;
 }
 
+-(void)displayNewLetter:(NSString *)newLetter
+{
+    [ProgressHUD show:newLetter];
+}
+
+-(void)doneTransmitting
+{
+    [ProgressHUD dismiss];
+    [self.SendMessageButton setEnabled:YES];
+}
 @end

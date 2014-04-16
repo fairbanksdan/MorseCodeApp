@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcn-7F-Byi">
@@ -27,7 +27,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjN-dl-x0p">
-                                <rect key="frame" x="142" y="155" width="36" height="30"/>
+                                <rect key="frame" x="59" y="155" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,60 +36,32 @@
                                     <action selector="sendMessageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lwn-gr-N5o"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeF-33-c4h">
-                                <rect key="frame" x="59" y="498" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0m-A8-1A2">
+                                <rect key="frame" x="213" y="155" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ON">
+                                <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="turnOn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6qq-5S-1cN"/>
+                                    <action selector="cancelMessageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mEc-en-qvn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f73-6K-j5q">
-                                <rect key="frame" x="229" y="498" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OFF">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="turnOff:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="zQs-vJ-XxW"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="A" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vP6-rr-bwc">
-                                <rect key="frame" x="113" y="193" width="95" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="CWB-wC-Q5p"/>
-                                    <constraint firstAttribute="height" constant="100" id="M13-bu-29F"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="aoz-Os-2kf"/>
-                                    <constraint firstAttribute="width" constant="95" id="bBg-9U-ZNY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="69"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.95999999999999996" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vP6-rr-bwc" firstAttribute="top" secondItem="IjN-dl-x0p" secondAttribute="bottom" constant="8" id="6d8-6C-8ea"/>
                             <constraint firstItem="Bcn-7F-Byi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="A6V-hH-YWq"/>
-                            <constraint firstItem="vP6-rr-bwc" firstAttribute="centerX" secondItem="IjN-dl-x0p" secondAttribute="centerX" id="F4h-SY-xmA"/>
-                            <constraint firstItem="DeF-33-c4h" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="59" id="GbX-fR-9qc"/>
-                            <constraint firstItem="f73-6K-j5q" firstAttribute="baseline" secondItem="DeF-33-c4h" secondAttribute="baseline" id="JSc-sT-H7s"/>
                             <constraint firstItem="Bcn-7F-Byi" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="20" symbolic="YES" id="MhX-ce-ylt"/>
                             <constraint firstItem="IjN-dl-x0p" firstAttribute="top" secondItem="Bcn-7F-Byi" secondAttribute="bottom" constant="8" symbolic="YES" id="OZ2-MG-gsr"/>
-                            <constraint firstAttribute="trailing" secondItem="f73-6K-j5q" secondAttribute="trailing" constant="61" id="V1b-tV-ysH"/>
                             <constraint firstAttribute="trailing" secondItem="Bcn-7F-Byi" secondAttribute="trailing" constant="20" symbolic="YES" id="WuO-Oh-9Sb"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="DeF-33-c4h" secondAttribute="bottom" constant="40" id="aNc-PQ-fIY"/>
-                            <constraint firstItem="Bcn-7F-Byi" firstAttribute="centerX" secondItem="IjN-dl-x0p" secondAttribute="centerX" id="e9T-T3-joS"/>
-                            <constraint firstItem="vP6-rr-bwc" firstAttribute="top" secondItem="IjN-dl-x0p" secondAttribute="bottom" constant="8" symbolic="YES" id="fhT-CK-Ye4"/>
+                            <constraint firstItem="z0m-A8-1A2" firstAttribute="leading" secondItem="IjN-dl-x0p" secondAttribute="trailing" constant="118" id="ZI0-yA-KTT"/>
+                            <constraint firstItem="z0m-A8-1A2" firstAttribute="baseline" secondItem="IjN-dl-x0p" secondAttribute="baseline" id="dQf-yP-PSX"/>
+                            <constraint firstAttribute="trailing" secondItem="z0m-A8-1A2" secondAttribute="trailing" constant="59" id="jL0-db-Cp0"/>
                         </constraints>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="SendMessageButton" destination="IjN-dl-x0p" id="alm-rK-4jH"/>
-                        <outlet property="displayCurrentLetter" destination="vP6-rr-bwc" id="eMi-f1-eAu"/>
+                        <outlet property="cancelMessageButton" destination="z0m-A8-1A2" id="e3G-vG-NcR"/>
                         <outlet property="messageTextField" destination="Bcn-7F-Byi" id="im9-0u-oY0"/>
                     </connections>
                 </viewController>
@@ -100,6 +72,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

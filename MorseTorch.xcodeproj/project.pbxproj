@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C71FC71AF1F04EA9928304F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CC5519C2FE4B8A9F85DFB8 /* libPods.a */; };
+		D6271CBF18FF187300951386 /* TorchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6271CBE18FF187300951386 /* TorchController.m */; };
 		D66FC05918FDB3D50059D1E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66FC05818FDB3D50059D1E2 /* Foundation.framework */; };
 		D66FC05B18FDB3D50059D1E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66FC05A18FDB3D50059D1E2 /* CoreGraphics.framework */; };
 		D66FC05D18FDB3D50059D1E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66FC05C18FDB3D50059D1E2 /* UIKit.framework */; };
@@ -36,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BBEFF571A01949369A1D4C8A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D6271CBD18FF187300951386 /* TorchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TorchController.h; sourceTree = "<group>"; };
+		D6271CBE18FF187300951386 /* TorchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TorchController.m; sourceTree = "<group>"; };
 		D66FC05518FDB3D50059D1E2 /* MorseTorch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorseTorch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66FC05818FDB3D50059D1E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D66FC05A18FDB3D50059D1E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +63,7 @@
 		D66FC08D18FDB6EA0059D1E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D66FC08F18FDC4E90059D1E2 /* NSString+MorseCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MorseCode.h"; sourceTree = "<group>"; };
 		D66FC09018FDC4E90059D1E2 /* NSString+MorseCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MorseCode.m"; sourceTree = "<group>"; };
+		E4CC5519C2FE4B8A9F85DFB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 				D66FC05B18FDB3D50059D1E2 /* CoreGraphics.framework in Frameworks */,
 				D66FC05D18FDB3D50059D1E2 /* UIKit.framework in Frameworks */,
 				D66FC05918FDB3D50059D1E2 /* Foundation.framework in Frameworks */,
+				C71FC71AF1F04EA9928304F8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +99,7 @@
 				D66FC07D18FDB3D50059D1E2 /* MorseTorchTests */,
 				D66FC05718FDB3D50059D1E2 /* Frameworks */,
 				D66FC05618FDB3D50059D1E2 /* Products */,
+				BBEFF571A01949369A1D4C8A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +120,7 @@
 				D66FC05A18FDB3D50059D1E2 /* CoreGraphics.framework */,
 				D66FC05C18FDB3D50059D1E2 /* UIKit.framework */,
 				D66FC07718FDB3D50059D1E2 /* XCTest.framework */,
+				E4CC5519C2FE4B8A9F85DFB8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +131,8 @@
 				D66FC06718FDB3D50059D1E2 /* AppDelegate.h */,
 				D66FC06818FDB3D50059D1E2 /* AppDelegate.m */,
 				D66FC06A18FDB3D50059D1E2 /* Main.storyboard */,
+				D6271CBD18FF187300951386 /* TorchController.h */,
+				D6271CBE18FF187300951386 /* TorchController.m */,
 				D66FC08F18FDC4E90059D1E2 /* NSString+MorseCode.h */,
 				D66FC09018FDC4E90059D1E2 /* NSString+MorseCode.m */,
 				D66FC06D18FDB3D50059D1E2 /* ViewController.h */,
@@ -168,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D66FC08718FDB3D50059D1E2 /* Build configuration list for PBXNativeTarget "MorseTorch" */;
 			buildPhases = (
+				F06F2B9FCF624DE788689F58 /* Check Pods Manifest.lock */,
 				D66FC05118FDB3D50059D1E2 /* Sources */,
 				D66FC05218FDB3D50059D1E2 /* Frameworks */,
 				D66FC05318FDB3D50059D1E2 /* Resources */,
+				9F489FC6CFEE42BC8DE33EEB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,11 +266,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9F489FC6CFEE42BC8DE33EEB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F06F2B9FCF624DE788689F58 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D66FC05118FDB3D50059D1E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6271CBF18FF187300951386 /* TorchController.m in Sources */,
 				D66FC06F18FDB3D50059D1E2 /* ViewController.m in Sources */,
 				D66FC06918FDB3D50059D1E2 /* AppDelegate.m in Sources */,
 				D66FC06518FDB3D50059D1E2 /* main.m in Sources */,
@@ -383,6 +430,7 @@
 		};
 		D66FC08818FDB3D50059D1E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBEFF571A01949369A1D4C8A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -396,6 +444,7 @@
 		};
 		D66FC08918FDB3D50059D1E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBEFF571A01949369A1D4C8A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -466,6 +515,7 @@
 				D66FC08918FDB3D50059D1E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D66FC08A18FDB3D50059D1E2 /* Build configuration list for PBXNativeTarget "MorseTorchTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +524,7 @@
 				D66FC08C18FDB3D50059D1E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
