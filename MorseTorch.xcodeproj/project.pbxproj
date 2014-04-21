@@ -25,6 +25,9 @@
 		D66FC08418FDB3D50059D1E2 /* MorseTorchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FC08318FDB3D50059D1E2 /* MorseTorchTests.m */; };
 		D66FC08E18FDB6EA0059D1E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D66FC08D18FDB6EA0059D1E2 /* AVFoundation.framework */; };
 		D66FC09118FDC4E90059D1E2 /* NSString+MorseCode.m in Sources */ = {isa = PBXBuildFile; fileRef = D66FC09018FDC4E90059D1E2 /* NSString+MorseCode.m */; };
+		D6C34C7719006BDE001F24B2 /* MorseReceiverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C34C7619006BDE001F24B2 /* MorseReceiverVC.m */; };
+		D6C34C7D19007E7D001F24B2 /* Camera Shutter 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D6C34C7C19007E7D001F24B2 /* Camera Shutter 2.png */; };
+		D6C34C80190096EC001F24B2 /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C34C7F190096EC001F24B2 /* CameraController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,11 @@
 		D66FC08D18FDB6EA0059D1E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D66FC08F18FDC4E90059D1E2 /* NSString+MorseCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MorseCode.h"; sourceTree = "<group>"; };
 		D66FC09018FDC4E90059D1E2 /* NSString+MorseCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MorseCode.m"; sourceTree = "<group>"; };
+		D6C34C7519006BDE001F24B2 /* MorseReceiverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorseReceiverVC.h; sourceTree = "<group>"; };
+		D6C34C7619006BDE001F24B2 /* MorseReceiverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorseReceiverVC.m; sourceTree = "<group>"; };
+		D6C34C7C19007E7D001F24B2 /* Camera Shutter 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera Shutter 2.png"; sourceTree = "<group>"; };
+		D6C34C7E190096EC001F24B2 /* CameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
+		D6C34C7F190096EC001F24B2 /* CameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
 		E4CC5519C2FE4B8A9F85DFB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,8 +139,12 @@
 				D66FC06718FDB3D50059D1E2 /* AppDelegate.h */,
 				D66FC06818FDB3D50059D1E2 /* AppDelegate.m */,
 				D66FC06A18FDB3D50059D1E2 /* Main.storyboard */,
+				D6C34C7E190096EC001F24B2 /* CameraController.h */,
+				D6C34C7F190096EC001F24B2 /* CameraController.m */,
 				D6271CBD18FF187300951386 /* TorchController.h */,
 				D6271CBE18FF187300951386 /* TorchController.m */,
+				D6C34C7519006BDE001F24B2 /* MorseReceiverVC.h */,
+				D6C34C7619006BDE001F24B2 /* MorseReceiverVC.m */,
 				D66FC08F18FDC4E90059D1E2 /* NSString+MorseCode.h */,
 				D66FC09018FDC4E90059D1E2 /* NSString+MorseCode.m */,
 				D66FC06D18FDB3D50059D1E2 /* ViewController.h */,
@@ -146,6 +158,7 @@
 		D66FC05F18FDB3D50059D1E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D6C34C7C19007E7D001F24B2 /* Camera Shutter 2.png */,
 				D66FC06018FDB3D50059D1E2 /* MorseTorch-Info.plist */,
 				D66FC06118FDB3D50059D1E2 /* InfoPlist.strings */,
 				D66FC06418FDB3D50059D1E2 /* main.m */,
@@ -251,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D66FC07118FDB3D50059D1E2 /* Images.xcassets in Resources */,
+				D6C34C7D19007E7D001F24B2 /* Camera Shutter 2.png in Resources */,
 				D66FC06318FDB3D50059D1E2 /* InfoPlist.strings in Resources */,
 				D66FC06C18FDB3D50059D1E2 /* Main.storyboard in Resources */,
 			);
@@ -304,6 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C34C80190096EC001F24B2 /* CameraController.m in Sources */,
+				D6C34C7719006BDE001F24B2 /* MorseReceiverVC.m in Sources */,
 				D6271CBF18FF187300951386 /* TorchController.m in Sources */,
 				D66FC06F18FDB3D50059D1E2 /* ViewController.m in Sources */,
 				D66FC06918FDB3D50059D1E2 /* AppDelegate.m in Sources */,

@@ -21,7 +21,6 @@
 
 @property (nonatomic, unsafe_unretained) id<TorchControllerDelegate> delegate;
 
-
 - (void)convertMorseCode:(NSString *)morseString;
 
 -(void)cancelSending;
